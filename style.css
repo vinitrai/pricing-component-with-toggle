@@ -1,0 +1,208 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+*,*::before,*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --gradient:linear-gradient(hsl(236,72%,79%),hsl(237,63%,64%));
+    --neutral__grayblue-verylight:hsl(240,78%,98%);
+    --neutral__grayblue-light:hsl(234,14%,74%);
+    --neutral__grayish-blue:hsl(233,13%,49%);
+    --neutral__grayish-blue-dark:hsl(232,13%,33%);
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-size:15px;
+    background-color: var(--neutral__grayblue-verylight);
+    min-height: 100vh;
+}
+ul{
+    list-style-type: none;
+}
+main.container{
+    padding: 2em;
+    
+}
+.row{
+    width:90%;
+    margin: 0 auto;
+    max-width: 1550px;
+}
+header{
+    margin: 1em 0;
+    padding:1em;
+    color:var(--neutral__grayblue-light);
+}
+header h2{
+    text-align: center;
+    font-size:1.2rem;
+    padding: 1em;
+    margin: 0.5em 0;
+}
+.toggle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    width:100px;
+    height:50px;
+    border-radius: 25px;
+    background-image: var(--gradient);
+    position: relative;
+    margin: 0 0.5em;
+}
+input::before{
+    content: "";
+    height: 45px;
+    width:50%;
+    background-color: var(--neutral__grayblue-verylight);
+    border-radius: 50%;
+    position: absolute;
+    top:2.5px;
+    left:2.5px;
+}
+input:checked::before{
+    background-color:var(--neutral__grayblue-verylight);
+    transform: translatex(90%);
+}
+.pricing__monthly,.pricing__annually{
+    padding: 1em;
+}
+.pricing__monthly{
+    display: none;
+}
+.pricing__annually{
+    display:block;
+} 
+
+.card{
+    padding: 2em;
+    text-align: center;
+    margin-bottom: 1em;
+    border-radius:0.6em;
+    background-color:white;
+    color:var(--neutral__grayish-blue);
+}
+.card p{
+  margin-bottom: 0.5em;
+}
+.card h1{
+   margin: 0.5em 0;
+   font-size:1.8rem;
+   font-weight: 700;
+}
+.card ul{
+    margin: 1em 0;
+}
+.card li{
+    padding: 1em;
+    border-bottom: 1px solid var(--neutral__grayblue-light);
+}
+.card li:first-child{
+    border-top:1px solid var(--neutral__grayblue-light);
+}
+.card button{
+    appearance: none;
+    --webkit-appearance:none;
+    border:none;
+    border-radius:0.4em;
+    width:100%;
+    background-image: var(--gradient);
+    padding: 0.5em 1em;
+    text-transform:uppercase;
+    font-family:inherit;
+    color:var(--neutral__grayblue-verylight);
+    transition: all 150ms linear;
+}
+.card button:hover{
+    background-image: none;
+    background-color:var(--neutral__grayblue-verylight);
+    color:var(--neutral__grayish-blue);
+    cursor:pointer;
+    outline:none;
+    border:2px solid var(--neutral__grayish-blue);
+}
+.professional{
+    padding: 3em 2em;
+    text-align: center;
+    margin-bottom: 1em;
+    border-radius:10px;
+    background-image: var(--gradient);
+    color:white;
+}
+.professional li{
+    border-bottom:1px solid var(--neutral__grayblue-verylight);
+}
+.professional li:first-child{
+    border-top:1px solid var(--neutral__grayblue-verylight);
+}
+.professional button{
+    background-image: none;
+    background-color:var(--neutral__grayblue-verylight);
+    color:var(--neutral__grayish-blue);
+}
+.professional button:hover{
+   background-image: var(--gradient);
+   color:var(--neutral__grayblue-verylight);
+   border: 2px solid var(--neutral__grayblue-verylight) ;
+   
+}
+
+@media screen and (min-width:768px){
+   
+    .cards__container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding:1em 2em ;
+    }
+    .card{
+        flex:1 1 30%;
+    }
+    .card h1{
+        font-size:2.2rem;
+    }
+    .card ul{
+        margin: 2em 0;
+    }
+    .card button{
+        padding:0.5em;
+    }
+    .professional{
+        flex:1 1 40%;
+        min-height: 70vh;
+    }
+    .professional button{
+        margin-top: 3em;
+    }
+    
+
+}
+@media screen and (min-width:990px){
+     body{
+        background-image: url('images/bg-top.svg'),url('images/bg-bottom.svg') ;
+        background-position: right top,left bottom;
+        background-repeat: no-repeat,no-repeat;
+    }
+    .cards__container{
+        padding:1em 4em;
+        min-height: 50vh;
+    }
+    .card h1{
+        font-size:2.5rem;
+    }
+    .card ul{
+        margin: 3em 0;
+    }
+    .card button{
+        padding:1em;
+    }
+
+}
